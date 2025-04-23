@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Жайлау Жанерке Бақытқызының сайты</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+    }
+    .hidden {
+      display: none;
+    }
+    .login-form {
+      margin: 100px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      width: 300px;
+      background-color: #fff;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .login-form input {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .login-form button {
+      width: 80%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .login-form button:hover {
+      background-color: #45a049;
+    }
+    #error {
+      color: red;
+      display: none;
+    }
+    header, section, footer {
+      padding: 20px;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    nav ul li a:hover {
+      color: #4CAF50;
+    }
+    .section-content {
+      margin: 30px 0;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Кіру терезесі -->
+  <div class="login-form" id="loginForm">
+    <h2>Кіру</h2>
+    <input type="text" id="username" placeholder="Пайдаланушы аты" />
+    <input type="password" id="password" placeholder="Құпия сөз" />
+    <button onclick="login()">Кіру</button>
+    <p id="error">Қате пайдаланушы аты немесе құпия сөз!</p>
+  </div>
+
+  <!-- Басты бет -->
+  <header id="header" class="hidden">
+    <h1>Жайлау Жанерке Бақытқызының сайты</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Басты бет</a></li>
+        <li><a href="#tests">Тесттер</a></li>
+        <li><a href="#about">Мен туралы</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Басты бет бөлімі -->
+  <section id="home" class="hidden section-content">
+    <h2>Басты бет</h2>
+    <p>Бұл сайт информатика пәнінің мұғалімі Жайлау Жанерке Бақытқызының сайты.</p>
+  </section>
+
+  <!-- Тесттер бөлімі -->
+  <section id="tests" class="hidden section-content">
+    <h2>Тесттер</h2>
+
+    <!-- 5 сынып -->
+    <h3>5-сынып</h3>
+    <ol>
+      <li>Қандай мәліметтер типі бар?
+        <ul>
+          <li>a) Жиым</li>
+          <li>b) Санды мәліметтер</li>
+          <li>c) Строка</li>
+        </ul>
+      </li>
+      <li>Программалау тілдерінің қандай түрлері бар?
+        <ul>
+          <li>a) Сұрыптау</li>
+          <li>b) Декларативті</li>
+          <li>c) Бағдарламалау</li>
+        </ul>
+      </li>
+      <!-- Қалған сұрақтар қосылады осылай -->
+    </ol>
+  </section>
+
+  <!-- Мен туралы бөлімі -->
+  <section id="about" class="hidden section-content">
+    <h2>Мен туралы</h2>
+    <p>Менің аты-жөнім Жайлау Жанерке Бақытқызы, байланыс телефоным: 87714717137.</p>
+    <p>Тәжірибем туралы:</p>
+    <p>Мен бірнеше жыл бойы информатика пәнінен сабақ беріп келемін. Мектептерде, онлайн курсларда тәжірибе жинадым.</p>
+    <img src="path/to/photo.jpg" alt="Тәжірибем" width="200">
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Жайлау Жанерке Бақытқызы</p>
+  </footer>
+
+  <script>
+    // Кіру функциясы
+    function login() {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      const correctUsername = "zhanerkem";
+      const correctPassword = "12345678";
+
+      if (username === correctUsername && password === correctPassword) {
+        // Егер пайдаланушы аты мен құпия сөз дұрыс болса
+        document.getElementById("loginForm").style.display = "none";
+        document.getElementById("header").classList.remove("hidden");
+        document.getElementById("home").classList.remove("hidden");
+        document.getElementById("tests").classList.remove("hidden");
+        document.getElementById("about").classList.remove("hidden");
+      } else {
+        // Егер дұрыс емес болса
+        document.getElementById("error").style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
